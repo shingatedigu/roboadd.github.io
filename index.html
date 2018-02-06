@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>ROBO PRACT</title>
+</head>
+<body>
+SOURCE CODE:-
+// LightsensorEx1.java
+
+import ch.aplu.ev3.*;
+
+public class  LightSensorEx1
+{
+  public LightSensorEx1()
+  {
+    LegoRobot robot = new LegoRobot();
+    LightSensor ls = new LightSensor(SensorPort.S3);
+    robot.addPart(ls);
+    Gear gear = new Gear();
+    robot.addPart(gear);
+    gear.forward();
+    while (true)
+    {
+      int v = ls.getValue();
+      if (v < 500)
+      {
+        gear.backward(1400);
+        gear.left(550);
+        gear.forward();
+      }
+    }
+  }
+
+  public static void main(String[] args)
+  {
+    new LightSensorEx1();
+  }
+
+  // ------------------ Environment --------------------------
+  static
+  {
+    RobotContext.setStartPosition(250, 200);
+    RobotContext.useBackground("sprites/circle.gif");
+  }
+} <br>
+
+
+
+<br>// BorderFollowEx1.java
+
+import ch.aplu.nxt.*;
+
+public class  BorderFollowEx1
+{
+  public BorderFollowEx1()
+  {
+    LegoRobot robot = new LegoRobot();
+
+    LightSensor ls = new LightSensor(SensorPort.S3);
+    robot.addPart(ls);
+    Gear gear = new Gear();
+    robot.addPart(gear);
+    while (true)
+    {
+      if (ls.getValue() < 500)
+        gear.leftArc(0.1);
+      else
+        gear.rightArc(0.1);
+    }
+  }
+
+  public static void main(String[] args)
+  {
+    new BorderFollowEx1();
+  }
+
+    // ------------------ Environment --------------------------
+  static
+  {
+    RobotContext.setStartPosition(250, 490);
+    RobotContext.setStartDirection(-90);
+    RobotContext.useBackground("sprites/border.gif");
+  }
+} <br>
+
+<br>/ LightsensorEx1.java
+
+import ch.aplu.ev3.*;
+
+public class  LightSensorEx1
+{
+  public LightSensorEx1()
+  {
+    LegoRobot robot = new LegoRobot();
+    LightSensor ls = new LightSensor(SensorPort.S3);
+    robot.addPart(ls);
+    Gear gear = new Gear();
+    robot.addPart(gear);
+    gear.forward();
+    while (true)
+    {
+      int v = ls.getValue();
+      if (v < 500)
+      {
+        gear.backward(1400);
+        gear.left(550);
+        gear.forward();
+      }
+    }
+  }
+
+  public static void main(String[] args)
+  {
+    new LightSensorEx1();
+  }
+
+  // ------------------ Environment --------------------------
+  static
+  {
+    RobotContext.setStartPosition(250, 200);
+    RobotContext.useBackground("sprites/circle.gif");
+  }
+} <br>
+
+
+</body>
+</html>
